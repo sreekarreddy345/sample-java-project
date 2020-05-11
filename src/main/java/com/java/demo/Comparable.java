@@ -1,8 +1,8 @@
 package com.java.demo;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Comparable {
@@ -14,7 +14,7 @@ public class Comparable {
         System.out.println("name - " + s1);
 
         List<Integer> list = new ArrayList<>();
-        Collection<Integer> i = Collections.synchronizedCollection(list);
+        List<Integer> i = Collections.synchronizedList(list);
         i.add(9);
         i.add(2);
         i.add(32);
@@ -24,11 +24,15 @@ public class Comparable {
         i.add(6);
         i.add(78);
 
-//        Collections.sort(i);
+        Collections.sort(i);
 
-        for (int a : i
-        ) {
+        for (int a : i) {
             System.out.print(a + ",");
+        }
+        System.out.println();
+        Iterator<Integer> iterator = i.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
         }
     }
 }

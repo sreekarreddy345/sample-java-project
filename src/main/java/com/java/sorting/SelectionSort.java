@@ -14,12 +14,7 @@ public class SelectionSort {
         }
 
         sortingUsingStreams();
-    }
-
-    private static void sortingUsingStreams() {
-        List<Integer> listOfValues = Arrays.asList(2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44);
-        List<Integer> sortedList = listOfValues.stream().sorted().collect(Collectors.toList());
-        sortedList.forEach(System.out::print);
+        stringSortingInArray();
     }
 
     public static int[] sortingUsingLoop(int[] array) {
@@ -34,5 +29,24 @@ public class SelectionSort {
             }
         }
         return array;
+    }
+
+    private static void sortingUsingStreams() {
+        List<Integer> listOfValues = Arrays.asList(2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44);
+        List<Integer> sortedList = listOfValues.stream().sorted().collect(Collectors.toList());
+        sortedList.forEach(System.out::print);
+    }
+
+    private static void stringSortingInArray() {
+//        List<Integer> listOfValues = Arrays.asList(2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44);
+//        List<Integer> sortedList = listOfValues.stream().sorted().collect(Collectors.toList());
+//        sortedList.forEach(System.out::print);
+
+        String[] a = new String[]{"d", "a", "e", "h", "j", "v"};
+        Arrays.sort(a);
+        for (String b : a) {
+            System.out.print(b + " ");
+        }
+
     }
 }

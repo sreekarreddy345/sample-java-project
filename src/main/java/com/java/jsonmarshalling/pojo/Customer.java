@@ -14,4 +14,12 @@ public class Customer {
     private int age;
     private int id;
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", id=" + id +
+                '}';
+    }
 }

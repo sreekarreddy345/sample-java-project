@@ -13,9 +13,7 @@ class BB extends AA {
 
 }
 
-public class Test  {
-
-    
+public class Test {
 
     static int a = 1111;
 

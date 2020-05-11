@@ -12,10 +12,10 @@ public class CountObjects {
         CountObjects countObjects2 = new CountObjects();
         CountObjects countObjects3 = new CountObjects();
 
-        countObjects1.countNumberOfObjects();
+        countNumberOfObjects();
     }
 
-    public void countNumberOfObjects() {
+    public static void countNumberOfObjects() {
         System.out.println("Number of Objects - " + i);
     }
 }

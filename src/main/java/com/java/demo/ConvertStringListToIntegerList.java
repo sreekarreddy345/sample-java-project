@@ -8,10 +8,11 @@ import java.util.stream.Collectors;
 public class ConvertStringListToIntegerList {
     public static void main(String[] args) {
         List<String> listOfString = Arrays.asList("1", "2", "3");
+
         List<Integer> integers = convertStringToInteger(listOfString);
         System.out.println("integers - " + integers);
-        List<Integer> integers1 = StringToInt(listOfString);
 
+        List<Integer> integers1 = StringToInt(listOfString);
         System.out.println("integers1 - " + integers1);
     }
 

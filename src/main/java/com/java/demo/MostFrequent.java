@@ -17,14 +17,15 @@ public class MostFrequent {
     }
 
 
-   public static int mostFrequent(int arr[], int n) {
+    public static int mostFrequent(int arr[], int n) {
 
         // Sort the listimplementation
         Arrays.sort(arr);
 
         // find the max frequency using linear
         // traversal
-        int max_count = 1, res = arr[0];
+        int max_count = 1;
+        int res = arr[0];
         int curr_count = 1;
 
         for (int i = 1; i < n; i++) {

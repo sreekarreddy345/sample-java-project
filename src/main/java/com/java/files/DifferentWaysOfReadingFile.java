@@ -1,9 +1,6 @@
 package com.java.files;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 
 public class DifferentWaysOfReadingFile {
@@ -11,7 +8,7 @@ public class DifferentWaysOfReadingFile {
 
         String path = "C:\\Users\\sreek\\Desktop\\sample.txt";
 
-        //using buffered reader
+        // using buffered reader
         File file = new File(path);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         StringBuilder sb = new StringBuilder();
@@ -20,8 +17,6 @@ public class DifferentWaysOfReadingFile {
         }
         System.out.println("data - " + sb);
 
-
-
         // reading file using File Reader
         FileReader fileReader = new FileReader(path);
         int i;
@@ -29,8 +24,7 @@ public class DifferentWaysOfReadingFile {
             System.out.print((char) i);
         }
 
-
-        // reading files using readAllBytes
+        // reading files using Files.readAllBytes
         File f = new File(path);
         String s = new String(Files.readAllBytes(f.toPath()));
         System.out.println("S - " + s);

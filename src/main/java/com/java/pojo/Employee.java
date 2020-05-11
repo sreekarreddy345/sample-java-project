@@ -1,0 +1,55 @@
+package com.java.pojo;
+
+public class Employee {
+    private int ssn;
+    private String empName;
+    private int empAge;
+
+    public Employee() {
+    }
+
+    public Employee(int ssn, String empName, int empAge) {
+        this.ssn = ssn;
+        this.empName = empName;
+        this.empAge = empAge;
+    }
+
+    public int getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(int ssn) {
+        this.ssn = ssn;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public int getEmpAge() {
+        return empAge;
+    }
+
+    public void setEmpAge(int empAge) {
+        this.empAge = empAge;
+    }
+}
+
+class testEmployee{
+    public static void main(String[] args) {
+        Employee e = new Employee();
+
+        e.setEmpAge(20);
+        e.setSsn(100);
+        e.setEmpName("sreekar");
+
+        Employee e1 = new Employee(1,"sreekar",20);
+
+
+
+    }
+}

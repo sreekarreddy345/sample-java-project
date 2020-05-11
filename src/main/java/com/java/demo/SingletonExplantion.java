@@ -16,9 +16,9 @@ class SingletonExplanation {
 
     // static method to create instance of SingletonExplanation class
     public static SingletonExplanation getInstance() {
-        if (single_instance == null)
+        if (single_instance == null) {
             single_instance = new SingletonExplanation();
-
+        }
         return single_instance;
     }
 }

@@ -9,9 +9,9 @@ public class SynchronizedMap {
 
     public static void main(String[] args) {
 
-        Map<String,String> stringStringMap = new HashMap<>();
+        Map<String, String> stringStringMap = new HashMap<>();
 
-        Map sampleMap = Collections.synchronizedMap(stringStringMap);
+        Map<?, ?> sampleMap = Collections.synchronizedMap(stringStringMap);
 
     }
 }

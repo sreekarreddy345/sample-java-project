@@ -1,7 +1,6 @@
 package com.java.demo;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class HashMapVsHashSet {
     public static void main(String[] args) {
@@ -11,7 +10,7 @@ public class HashMapVsHashSet {
         stringMap.put("2", "reddy");
         stringMap.put("3", "reddy");
         stringMap.put("4", "reddy");
-        stringMap.put(null,"32");
+        stringMap.put(null, "32");
 
         System.out.println("hashcode - " + stringMap.hashCode());
 
@@ -50,8 +49,8 @@ public class HashMapVsHashSet {
 
     }
 
-    private static synchronized void iteratingHashMapUsingForEach(Map<String, String> stringStringMap) {
-        for (Map.Entry entry : stringStringMap.entrySet()) {
+    private static synchronized void iteratingHashMapUsingForEach(Map<String, String> map) {
+        for (Map.Entry entry : map.entrySet()) {
 
             String key = (String) entry.getKey();
             Object value = entry.getValue();

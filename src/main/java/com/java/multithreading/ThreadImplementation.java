@@ -17,9 +17,9 @@ public class ThreadImplementation {
     public static void main(String[] args) {
         for (int i = 0; i < 6; i++) {
             MultiThread multiThread = new MultiThread();
-            multiThread.start();
+            multiThread.start();// one way to run thread by using class object.start();
             Thread thread = new Thread(new MultiThread());
-            thread.start();
+            thread.start();//second way to run thread by using thread object.start();
         }
     }
 }

@@ -3,7 +3,7 @@ package com.java.codingpoblems;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SumOfArray {
+public class SumOfArrayEqualsTarget {
     public static void main(String[] args) {
         int[] numbers = new int[]{1, 2, 4, 6, 9, 7, 5};
 //        int [] n = {1,2,2};
@@ -15,7 +15,6 @@ public class SumOfArray {
     }
 
 
-//                  {1, 2, 4, 6, 9, 7, 5};
     public static int[] getTwoSum(int[] numbers, int target) {//6
         Map<Integer, Integer> visitedNumber = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {

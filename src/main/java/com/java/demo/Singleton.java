@@ -3,6 +3,7 @@ package com.java.demo;
 import java.io.Serializable;
 
 public class Singleton implements Serializable {
+
     private static volatile Singleton instance;
 
     public static Singleton getInstance() {

@@ -1,11 +1,15 @@
 package com.java.codingpoblems;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class IntegerDuplicate {
     public static void main(String[] args) {
         int[] my_array = {1, 2, 5, 5, 6, 6, 7, 2, 3, 3};
+
+        Map<String, String> map = new ConcurrentHashMap<>();
 
         System.out.print("Duplicate Element using Loop - ");
         for (int i = 0; i < my_array.length; i++) {
@@ -25,8 +29,6 @@ public class IntegerDuplicate {
             } else {
                 System.out.print(a + " ");
             }
-
-
         }
     }
 }
