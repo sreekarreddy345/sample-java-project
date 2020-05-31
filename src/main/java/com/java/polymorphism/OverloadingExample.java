@@ -1,5 +1,7 @@
 package com.java.polymorphism;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 public class OverloadingExample {
@@ -11,6 +13,8 @@ public class OverloadingExample {
 
     public static String getRandomString() {
         UUID random = UUID.randomUUID();
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        System.out.println(timeStamp);
         return "THB".concat(random.toString().replaceAll("-", ""));
     }
 

@@ -4,20 +4,22 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SelectionSort {
+public class SortingAlgorithm {
 
     public static void main(String[] args) {
         int[] arrayOfValues = {2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44};
-        int[] sortedValues = sortingUsingLoop(arrayOfValues);
+
+        int[] sortedValues = selectionSort(arrayOfValues);
         for (int ints1 : sortedValues) {
             System.out.print(ints1 + ",");
         }
-
+        System.out.println();
         sortingUsingStreams();
+        System.out.println();
         stringSortingInArray();
     }
 
-    public static int[] sortingUsingLoop(int[] array) {
+    public static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j < array.length; j++) {
 
@@ -34,7 +36,7 @@ public class SelectionSort {
     private static void sortingUsingStreams() {
         List<Integer> listOfValues = Arrays.asList(2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44);
         List<Integer> sortedList = listOfValues.stream().sorted().collect(Collectors.toList());
-        sortedList.forEach(System.out::print);
+        sortedList.forEach(System.out::println);
     }
 
     private static void stringSortingInArray() {

@@ -5,8 +5,10 @@ public class IntegerReverse {
     public static void main(String[] args) {
         int value = 987654321;
 
+        //using int calculations
         System.out.println(reverseInteger(value));
 
+        // by converting int to string
         String s = String.valueOf(value);
         String reverseString = reverseString(s);
         int reverseInt = Integer.parseInt(reverseString);
@@ -28,11 +30,17 @@ public class IntegerReverse {
 
     public static String reverseString(String input) {
 
-        StringBuilder stringBUilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int i = input.length() - 1; i >= 0; i--) {
-            stringBUilder.append(input.charAt(i));
+            stringBuilder.append(input.charAt(i));
         }
-        return stringBUilder.toString();
+
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            stringBuilder.append(input.charAt(i));
+        }
+
+        return stringBuilder.toString();
     }
 
 

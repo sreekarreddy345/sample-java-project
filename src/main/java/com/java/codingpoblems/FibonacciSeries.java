@@ -13,8 +13,6 @@ public class FibonacciSeries {
             currentNumber = nextNumber;
             nextNumber = fib;
             System.out.print(fib + " ");
-
-
         }
     }
 }

@@ -9,16 +9,16 @@ public class PrimeNumber {
         for (int i = 0; i < 10; i++) {
             System.out.print("Enter input value - ");
             input = scanner.nextInt();
-            boolean isPrime = false;
+            boolean isComposite = false;
 
-            for (int j = 0; j < input / 2; j++) {
-                if (input % 2 == 0) {
-                    isPrime = true;
+            for (int j = 2; j < input; j++) {
+                if (input % j == 0) {
+                    isComposite = true;
                     break;
                 }
             }
-            if (isPrime) {
-                System.out.println(input + " - is not a prime number");
+            if (isComposite) {
+                System.out.println(input + " - is not a composite number");
             } else {
                 System.out.println(input + " - is a prime number");
             }
