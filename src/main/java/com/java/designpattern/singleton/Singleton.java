@@ -1,4 +1,4 @@
-package com.java.demo;
+package com.java.designpattern.singleton;
 
 import java.io.Serializable;
 
@@ -15,20 +15,12 @@ public class Singleton implements Serializable {
             }
         }
         return instance;
-/*        ArrayList<String> strings = new ArrayList<>();
-        strings.add("ds");
-        strings.add("sd");
-        strings.add("sfd");
-        strings.add("sc");
-        strings.add("qwd");
-        strings.add("jvh");
-        Iterator<String> stringIterator = strings.iterator();
-        while (stringIterator.hasNext()){
-            System.out.println(stringIterator.next());
-        }*/
     }
 
     public static void main(String[] args) {
-        getInstance();
+        Singleton instance = getInstance();
+        System.out.println(instance.hashCode());
+        Singleton instance1 = getInstance();
+        System.out.println(instance1.hashCode());
     }
 }

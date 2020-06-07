@@ -22,12 +22,14 @@ public class IntegerDuplicate {
         Set<Integer> set = new HashSet<>();
         System.out.print("Duplicate Element using set - ");
         for (int a : my_array) {
+            //{1, 2, 5, 5, 6, 6, 7, 2, 3, 3};
             if (!set.contains(a)) {
                 set.add(a);
             } else {
                 System.out.print(a + " ");
             }
         }
+        System.out.println();
     }
 
     private static void duplicateElementUsingLoop(int[] my_array) {
@@ -43,16 +45,19 @@ public class IntegerDuplicate {
 
     private static void duplicateElementUsingMap(int[] my_array) {
         Map<Integer, Integer> map = new HashMap<>();
-        for (int a : my_array) {
-            if (!map.containsKey(a))
-                map.put(a, 1);
+        //{1, 2, 5, 5, 6, 6, 7, 2, 3, 3};
+        for (int currentNumber : my_array) {
+            if (!map.containsKey(currentNumber))
+                map.put(currentNumber, 1);
             else {
-                Integer integer = map.get(a);
-                map.put(a, ++integer);
+                Integer integer = map.get(currentNumber);
+                map.put(currentNumber, ++integer);
             }
         }
-        for (Integer set : map.keySet()) {
-            System.out.println(set + " count - " + map.get(set));
+        Set<Integer> integers = map.keySet();
+
+        for (Integer key : integers) {
+            System.out.println(key + " count - " + map.get(key));
         }
 
     }

@@ -1,4 +1,4 @@
-package com.java.multithreading;
+package com.java.threads.multithreading;
 
 public class RunnableImplementationExample2 {
     public static void main(String[] args) {

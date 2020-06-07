@@ -1,10 +1,9 @@
-package com.java.multithreading;
+package com.java.threads.multithreading;
 
 class RunnerClassImplementation implements Runnable {
 
     @Override
     public void run() {
-
         try {
             System.out.println("Thread - " + Thread.currentThread().getId() + " is running");
 
@@ -16,9 +15,11 @@ class RunnerClassImplementation implements Runnable {
 
 public class RunnableImplementation {
     public static void main(String[] args) {
-        Thread thread = new Thread(new RunnerClassImplementation());
         for (int i = 0; i < 6; i++) {
+            Thread thread = new Thread(new RunnerClassImplementation());
+            thread.setName("newThread");
             thread.start();
+
         }
     }
 }

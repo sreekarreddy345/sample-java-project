@@ -1,8 +1,5 @@
 package com.java.listimplementation.linkedlist;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 public class LinkedListMainClass {
 
     public static void main(String[] args) {
@@ -17,6 +14,8 @@ public class LinkedListMainClass {
         linkedList.insertAtStart(25);
 
         linkedList.insertAt(0, 55);
+
+        linkedList.insertAt(1, 25);
 
         linkedList.deleteAt(2);
 

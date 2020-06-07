@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ComparableExample1 {
+public class ComparableAndComparatorExample1 {
 
     public static void main(String[] args) {
 
@@ -17,12 +17,14 @@ public class ComparableExample1 {
         list.add(new Student(4, "reddy", 24));
 
         Collections.sort(list);
-
-        Comparator<Student> com = (s1, s2) -> {
-            if (s1.getStudentID() > s2.getStudentID()) {
-                return 1;
-            } else
-                return -1;
+        Comparator<Student> com = new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                if (s1.getStudentID() > s2.getStudentID()) {
+                    return 1;
+                } else
+                    return -1;
+            }
         };
 
         Collections.sort(list, com);

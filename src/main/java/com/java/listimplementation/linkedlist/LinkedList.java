@@ -42,7 +42,7 @@ public class LinkedList {
         } else {
             Node n = head;// assigning node n as head to traverse from start.
             for (int i = 0; i < index - 1; i++) { //  giving index -1 to reach a value before index.
-                n = n.next;// to traverse every time who have do to n.next, reassigning n value with n.next
+                n = n.next;// to traverse every time we have do to n.next, reassigning n value with n.next
             }
             node.next = n.next;// pointing new node.next to the value of next node
             n.next = node; //pointing n.next to node
@@ -55,12 +55,12 @@ public class LinkedList {
             head = head.next;
         } else {
             Node n = head;
-            Node n1;
+            Node n1;//null
             for (int i = 0; i < index - 1; i++) {
                 n = n.next;
             }
-            n1 = n.next;  //  ??
-            n.next = n1.next;  //  ??
+            n1 = n.next;  //  assigning n1(node which we need to delete) with n.next value
+            n.next = n1.next;  //  assigning n.next with n1.next there by removing n1 link
 
         }
     }
@@ -73,6 +73,5 @@ public class LinkedList {
         }
         System.out.println(node.data);//since the last node has next as null we are printing it out of while loop
     }
-
 
 }

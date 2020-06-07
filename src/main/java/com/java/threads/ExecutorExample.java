@@ -8,10 +8,12 @@ public class ExecutorExample {
         ExecutorService executor = Executors.newFixedThreadPool(5);
 
 
-        // Runnable, return void, nothing, submit and run the task async
-        executor.submit(() -> System.out.println("I'm Runnable task."));
+        // Runnable, return void, nothing, execute and run the task async
+        // we can use executor.execute for runnable
+        executor.execute(() -> System.out.println("I'm Runnable task."));
 
         // Callable, return a future, submit and run the task async
+        // we can executor.submit for callable
         Future<Integer> futureTask1 = executor.submit(() -> {
             System.out.println("I'm Callable task.");
             return 1 + 1;
