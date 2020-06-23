@@ -1,12 +1,17 @@
 package com.java.AtomicInteger;
 
+import org.testng.annotations.Test;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 
 public class DriverClass {
-    public static void main(String[] args) {
+    //    public static void main(String[] args) {
+
+    @Test
+    public void test() {
         ExecutorService executorService = null;
         Counter counter = new Counter();
         try {

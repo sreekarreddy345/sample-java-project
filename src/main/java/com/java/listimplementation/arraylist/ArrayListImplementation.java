@@ -11,8 +11,8 @@ public class ArrayListImplementation<T> {
         data = new Object[initialCapacity];
     }
 
-    public ArrayListImplementation(int initialCapacity) {
-        data = new Object[initialCapacity];
+    public ArrayListImplementation(int initialCapacityPassed) {
+        data = new Object[initialCapacityPassed];
     }
 
     public boolean isEmpty() {
@@ -24,7 +24,7 @@ public class ArrayListImplementation<T> {
     }
 
     public void add(Object value) {
-        if (data.length == size) {
+        if (data.length == size) { // if data and size are equal we are increasing the arraylist size
             increaseCapacity();
         }
         data[size++] = value;

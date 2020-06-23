@@ -6,7 +6,7 @@ public class StringReverse {
         String Str = "Hello World";
 
         System.out.println(stringReverseStringBuilder(Str));
-        System.out.println(stringReverseManually(Str));
+//        System.out.println(stringReverseManually(Str));
         System.out.println("reverse :: " + stringReverseUsingLoop(Str));
 
         String a = "some";
@@ -25,20 +25,6 @@ public class StringReverse {
         return stringBuilder.toString();
     }
 
-    private static String stringReverseManually(String str) {
-        StringBuilder builder = new StringBuilder();
-
-        for (int i = str.length() - 1; i >= 0; i--) {
-            builder.append(str.charAt(i));
-        }
-
-
-        for (int i = str.length()-1; i >= 0; i--) {
-            builder.append(str.charAt(i));
-        }
-
-        return builder.toString();
-    }
 
     private static String stringReverseStringBuilder(String str) {
 

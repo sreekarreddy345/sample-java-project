@@ -4,6 +4,7 @@ public class MissingValueInArray {
     public static void main(String[] args) {
         int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15};
 
+
         System.out.println("last element - " + a[a.length - 1]);
 //  if it is sorted we can provide the last element
         int limit = 15;

@@ -7,6 +7,7 @@ public class ListDemo3 {
 
 //        CustomArrayList list = new CustomArrayList();
         ArrayListImplementation<String> list = new ArrayListImplementation();
+        ArrayListImplementation<String> list1 = new ArrayListImplementation(10);
 
         System.out.println("isEmPty - " + list.isEmpty());
         System.out.println("ListMethods Size - " + list.size());

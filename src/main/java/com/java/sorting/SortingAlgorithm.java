@@ -9,20 +9,19 @@ public class SortingAlgorithm {
     public static void main(String[] args) {
         int[] arrayOfValues = {2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44};
 
-        int[] sortedValues = selectionSort(arrayOfValues);
-        for (int ints1 : sortedValues) {
-            System.out.print(ints1 + ",");
+        int[] sortedValues = selectionSort(arrayOfValues);// sorting using selection sort
+        for (int i : sortedValues) {
+            System.out.print(i + ",");
         }
         System.out.println();
-        sortingUsingStreams();
+        sortingUsingStreams();// sorting using streams
         System.out.println();
-        stringSortingInArray();
+        stringSortingInArray();//sorting using arrays.sort
     }
 
     public static int[] selectionSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i; j < array.length; j++) {
-
                 if (array[i] > array[j]) {// > symbol to get values in ascending and < symbol to get values descending
                     int t = array[i];
                     array[i] = array[j];
@@ -32,6 +31,7 @@ public class SortingAlgorithm {
         }
         return array;
     }
+
 
     private static void sortingUsingStreams() {
         List<Integer> listOfValues = Arrays.asList(2, 25, 23, 24, 54, 45, 136, 6, 4, 6, 1, 44);

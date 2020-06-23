@@ -6,6 +6,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class ProducerAndConsumerUsingLock<E> {
+    //   Below ArrayBlockingQueue can be used without implementing all the logic
+//    ArrayBlockingQueue<E> queue2 = new ArrayBlockingQueue<E>(10);
     private int max;
     private Queue<E> queue;
     private ReentrantLock lock = new ReentrantLock(true);

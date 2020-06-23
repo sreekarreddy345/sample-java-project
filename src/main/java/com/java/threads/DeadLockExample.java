@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
 
 public class DeadLockExample {
-
+// Not Working DeadLockExample refer to DeadLockExample2
     private final static Logger LOGGER = LoggerFactory.getLogger(DeadLockExample.class);
 
 
@@ -27,12 +27,12 @@ public class DeadLockExample {
     }
 
     public static void method2() throws InterruptedException {
-        synchronized (String.class) {
+        synchronized (Integer.class) {
             TimeUnit.SECONDS.sleep(1);
             LOGGER.info("Acquired lock lock on String.class Object - method 1");
             LOGGER.info("frsfsfsfsfs");
         }
-        synchronized (Integer.class) {
+        synchronized (String.class) {
             TimeUnit.SECONDS.sleep(1);
             LOGGER.info("Acquired lock on Integer.class Object - - method 1");
         }

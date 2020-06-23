@@ -1,5 +1,7 @@
 package com.java.pojo;
 
+import java.util.Objects;
+
 public class Employee {
     private int ssn;
     private String empName;
@@ -12,6 +14,30 @@ public class Employee {
         this.ssn = ssn;
         this.empName = empName;
         this.empAge = empAge;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return ssn == employee.ssn &&
+                empAge == employee.empAge &&
+                empName.equals(employee.empName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ssn, empName, empAge);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "ssn=" + ssn +
+                ", empName='" + empName + '\'' +
+                ", empAge=" + empAge +
+                '}';
     }
 
     public int getSsn() {
@@ -37,9 +63,10 @@ public class Employee {
     public void setEmpAge(int empAge) {
         this.empAge = empAge;
     }
+
 }
 
-class testEmployee{
+class testEmployee {
     public static void main(String[] args) {
         Employee e = new Employee();
 
@@ -47,9 +74,7 @@ class testEmployee{
         e.setSsn(100);
         e.setEmpName("sreekar");
 
-        Employee e1 = new Employee(1,"sreekar",20);
-
-
+        Employee e1 = new Employee(1, "sreekar", 20);
 
     }
 }

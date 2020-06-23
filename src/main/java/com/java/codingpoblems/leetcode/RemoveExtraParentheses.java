@@ -21,8 +21,9 @@ public class RemoveExtraParentheses {
             if (c == '(') {
                 open++;
             } else if (c == ')') {
-                if (open == 0)
+                if (open == 0) {
                     continue;
+                }
                 open--;
             }
             sb.append(c);

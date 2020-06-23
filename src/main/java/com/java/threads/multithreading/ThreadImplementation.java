@@ -19,7 +19,6 @@ public class ThreadImplementation {
             MultiThread multiThread = new MultiThread();
             multiThread.setName("this is multi thread");
             multiThread.start();// one way to run thread by using class object.start();
-
             Thread thread = new Thread(new MultiThread());
             thread.setName("this is threadddd");
             thread.start();//second way to run thread by using thread object.start();

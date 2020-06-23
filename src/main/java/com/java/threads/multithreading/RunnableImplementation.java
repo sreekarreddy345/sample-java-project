@@ -15,6 +15,7 @@ class RunnerClassImplementation implements Runnable {
 
 public class RunnableImplementation {
     public static void main(String[] args) {
+
         for (int i = 0; i < 6; i++) {
             Thread thread = new Thread(new RunnerClassImplementation());
             thread.setName("newThread");
