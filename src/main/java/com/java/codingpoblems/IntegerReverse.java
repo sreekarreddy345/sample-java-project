@@ -17,7 +17,7 @@ public class IntegerReverse {
         int reverseInt = Integer.parseInt(reverseString);
         System.out.println(reverseInt);
 
-        int a[] = {1, 2, 5, 5, 6, 6, 7, 2, 3, 3};
+        int[] a = {1, 2, 5, 5, 6, 6, 7, 2, 3, 3};
         System.out.println("Duplicate elements");
         duplicateCheck(a);
     }

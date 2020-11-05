@@ -11,6 +11,7 @@ public class ObjectToXmlExample {
 
     public static void main(String[] args) throws JAXBException {
         Customer customer = new Customer();
+
         customer.setId(100);
         customer.setAge(24);
         customer.setName("sreekar");

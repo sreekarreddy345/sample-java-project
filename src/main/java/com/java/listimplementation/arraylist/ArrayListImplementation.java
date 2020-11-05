@@ -3,7 +3,7 @@ package com.java.listimplementation.arraylist;
 
 public class ArrayListImplementation<T> {
 
-    private Object data[];
+    private Object[] data;
     private int initialCapacity = 10;
     private int size = 0;
 

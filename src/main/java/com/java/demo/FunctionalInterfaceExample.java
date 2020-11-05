@@ -14,6 +14,13 @@ interface Functional {
 
 }
 
-public class FunctionalInterfaceExample {
+public class FunctionalInterfaceExample implements Functional {
+    public static void main(String[] args) {
 
+    }
+
+    @Override
+    public void doWork() {
+
+    }
 }

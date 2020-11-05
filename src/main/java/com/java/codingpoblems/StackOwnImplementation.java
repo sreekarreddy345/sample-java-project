@@ -1,11 +1,11 @@
 package com.java.codingpoblems;
 
-class Stack {
+class OwnStack {
     private int[] array;
     private int capacity;
     private int top;
 
-    Stack(int initialCapacity) {
+    OwnStack(int initialCapacity) {
         this.array = new int[initialCapacity];
         this.capacity = initialCapacity;
         this.top = -1;
@@ -13,21 +13,21 @@ class Stack {
 
     public void push(int item) {
         if (isFull()) {
-            throw new RuntimeException("Stack is full");
+            throw new RuntimeException("OwnStack is full");
         }
         array[++top] = item;
     }
 
     public int pop() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack is Empty");
+            throw new RuntimeException("OwnStack is Empty");
         }
         return array[top--];
     }
 
     public int peek() {
         if (isEmpty()) {
-            throw new RuntimeException("Stack is Empty");
+            throw new RuntimeException("OwnStack is Empty");
         }
         return array[top];
     }
@@ -43,14 +43,14 @@ class Stack {
 
 public class StackOwnImplementation {
     public static void main(String[] args) {
-        Stack stackObject = new Stack(10);
+        OwnStack ownStackObject = new OwnStack(10);
 //        List list = new ArrayList(10);
 
         for (int i = 0; i < 6; i++) {
-            stackObject.push(i);
+            ownStackObject.push(i);
         }
-        System.out.println("peek - " + stackObject.peek());
-        System.out.println("pop - " + stackObject.pop());
-        System.out.println("peek - " + stackObject.peek());
+        System.out.println("peek - " + ownStackObject.peek());
+        System.out.println("pop - " + ownStackObject.pop());
+        System.out.println("peek - " + ownStackObject.peek());
     }
 }

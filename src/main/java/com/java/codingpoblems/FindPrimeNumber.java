@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class FindPrimeNumber {
     public static void main(String[] args) {
-        secondLargestInArray();
 
         for (int i = 0; i < 100; i++) {
             boolean isComposite = false;
@@ -20,6 +19,7 @@ public class FindPrimeNumber {
                 System.out.println(i + " - is a prime number");
             }
         }
+        secondLargestInArray();
     }
 
     private static void secondLargestInArray() {

@@ -12,7 +12,7 @@ public class TestClass {
         DeadLockExample.method2();
     }
 
-    @Test
+    @Test(threadPoolSize = 4)
     public static void method2() throws InterruptedException {
         DeadLockExample.method1();
         DeadLockExample.method1();

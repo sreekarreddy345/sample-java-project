@@ -1,7 +1,7 @@
 package com.java.demo;
 
 abstract class Shape {
-
+ int i;
     void draw() {
         System.out.println("drawing shape");
     }

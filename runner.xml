@@ -1,10 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-
-
-<suite name="Test-method Suite" parallel="methods" thread-count="6">
-
-<test name="Test-method test" group-by-instances="true">
-
+<suite name="Test-method Suite" parallel="tests" thread-count="6">
+    <test name="Test-method test" group-by-instances="true">
 
         <classes>
             <class name="com.java.threads.TestClass"/>
@@ -12,6 +8,10 @@
             <class name="com.java.threads.TestClass2"/>
             <class name="com.java.threads.TestClass2"/>
             <class name="com.java.equals.Example"/>
+            <class name="com.java.restapi.GetExample"/>
+            <class name="com.java.restapi.PostExample"/>
+            <class name="com.java.jdbc.JdbcDatabaseExample1"/>
+            <class name="com.java.AtomicInteger.DriverClass"/>
         </classes>
     </test>
 </suite>

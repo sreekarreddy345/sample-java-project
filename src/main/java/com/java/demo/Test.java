@@ -2,7 +2,6 @@ package com.java.demo;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 class AA {
@@ -51,14 +50,23 @@ public class Test {
         list.add("d");
         list.add("e");
         list.add("f");
-        for (String s : list) {
-//            System.out.println(s);
+
+
+        for (int i = 0; i < list.size(); i++) {
+            if ("a".equals(list.get(i))) {
+                list.remove(i);
+            }
         }
-        Iterator<String> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            String s = iterator.next();
-//            System.out.println(s);
-        }
+
+        System.out.println(list);
+//        for (String s : list) {
+////            System.out.println(s);
+//        }
+//        Iterator<String> iterator = list.iterator();
+//        while (iterator.hasNext()) {
+//            String s = iterator.next();
+////            System.out.println(s);
+//        }
     }
 
 }

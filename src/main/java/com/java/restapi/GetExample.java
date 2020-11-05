@@ -1,5 +1,6 @@
 package com.java.restapi;
 
+import com.google.gson.Gson;
 import com.java.utils.Lib;
 import com.jayway.jsonpath.JsonPath;
 import org.json.simple.parser.ParseException;
@@ -14,21 +15,37 @@ import java.util.Map;
 public class GetExample {
     @Test
     public void testGetMethod() throws IOException, ParseException {
-        RestTemplate restTemplate = new RestTemplate();
+
         String url = "http://dummy.restapiexample.com/api/v1/employees";
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-        if (response.getStatusCodeValue() == 200) {
-            String content = response.getBody();
-            Map<String, Object> map = Lib.convertJsonToMap(content);
-            List<?> data1 = (List<?>) map.get("data");
-//            System.out.println("size - " + data1.size());
 
-            for (int i = 0; i < data1.size(); i++) {
-                String query = "$.data[" + i + "].employee_name";
-                String value = JsonPath.read(map, query);
-                System.out.println(value);
-            }
+        String content = getRestExample(url);
+        System.out.println("content - " + content);
 
+
+        Map<String, Object> map = Lib.convertStringToMap(content);
+
+        String s = new Gson().toJson(map);
+
+
+        List<?> data1 = (List<?>) map.get("data");
+
+
+        for (int i = 0; i < data1.size(); i++) {
+            String query = "$.data[" + i + "].employee_name";
+            String value = JsonPath.read(map, query);
+            System.out.println(value);
         }
     }
+
+    public static String getRestExample(String url) {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        String content = null;
+        if (response.getStatusCodeValue() == 200) {
+            content = response.getBody();
+
+        }
+        return content;
+    }
+
 }

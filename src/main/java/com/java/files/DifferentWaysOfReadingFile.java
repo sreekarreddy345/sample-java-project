@@ -1,7 +1,12 @@
 package com.java.files;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.Files;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class DifferentWaysOfReadingFile {
     public static void main(String[] args) throws IOException {
@@ -29,6 +34,14 @@ public class DifferentWaysOfReadingFile {
         String s = new String(Files.readAllBytes(f.toPath()));
         System.out.println("S - " + s);
 
+        // to read first line
+        String firstLine = com.google.common.io.Files.asCharSource(file, UTF_8).readFirstLine();
+        System.out.println("firstLine - " + firstLine);
+
+        String firstLineMessage = "";
+        BufferedReader bufferedReader1 = new BufferedReader(new FileReader(f));
+        firstLineMessage = bufferedReader1.readLine();// to read first line
+        System.out.println("firstLineMessage - " + firstLineMessage);
     }
 }
 

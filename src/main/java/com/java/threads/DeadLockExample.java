@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DeadLockExample {
 // Not Working DeadLockExample refer to DeadLockExample2
+
     private final static Logger LOGGER = LoggerFactory.getLogger(DeadLockExample.class);
 
 
@@ -19,6 +20,7 @@ public class DeadLockExample {
         synchronized (Integer.class) {
             TimeUnit.SECONDS.sleep(1);
             LOGGER.info("Acquired lock on Integer.class object- - method 1");
+            System.out.println("Acquired lock on Integer.class object- - method 1");
         }
         synchronized (String.class) {
             TimeUnit.SECONDS.sleep(1);

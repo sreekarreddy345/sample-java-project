@@ -3,16 +3,15 @@ package com.java.demo;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayToList extends rr implements a{
+interface a {
+    void meth();
+}
 
-    String[] a = {"sree", "reddy", "vaddi"};
+public class ArrayToList extends rr implements a {
 
-    List list = Arrays.asList(a);
+    String[] a = {"sree", "reddy", "sree", "sree", "sree", "sree", "vaddi"};
 
-    @Override
-    void eat() {
-        super.eat();
-    }
+    List<String> list = Arrays.asList(a);
 
     public static void main(String[] args) {
         ArrayToList arrayToList = new ArrayToList();
@@ -20,6 +19,10 @@ public class ArrayToList extends rr implements a{
 
     }
 
+    @Override
+    void eat() {
+        super.eat();
+    }
 
     @Override
     public void meth() {
@@ -27,11 +30,8 @@ public class ArrayToList extends rr implements a{
     }
 }
 
-interface a{
-    void meth();
-}
-class rr{
-    void eat(){
+class rr {
+    void eat() {
         System.out.println("eating");
     }
 

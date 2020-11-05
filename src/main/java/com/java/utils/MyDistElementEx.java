@@ -6,7 +6,7 @@ public class MyDistElementEx {
 
     public static void main(String a[]) {
 
-        HashSet<Price> lhm = new HashSet<Price>();
+        HashSet<Price> lhm = new HashSet<>();
         lhm.add(new Price("Banana", 20));
         lhm.add(new Price("Apple", 40));
         lhm.add(new Price("Orange", 30));

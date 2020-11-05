@@ -9,6 +9,7 @@ public class EnumerationExampleUsingVector {
         Vector<String> strings = new Vector<>();
         List<String> str = new ArrayList<>();
 
+
         str = Collections.synchronizedList(str); // to make it synchronize
 
         List<String> concurrentList = new CopyOnWriteArrayList<>();
@@ -45,7 +46,7 @@ public class EnumerationExampleUsingVector {
 //        Iterator<String> i = str.iterator();
 //        while(i.hasNext()){
 //            str.add("3dw");
-////            i.remove();
+//            i.remove();
 //            System.out.println(i.next());
 //        }
 

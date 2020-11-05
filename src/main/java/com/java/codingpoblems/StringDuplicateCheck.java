@@ -8,6 +8,7 @@ public class StringDuplicateCheck {
 
         List<String> list = new ArrayList<>();
 
+
         char[] chararr = str.toCharArray();
 //        StringBuilder a = new StringBuilder();
         for (int i = 0; i < chararr.length; i++) {
@@ -38,6 +39,10 @@ public class StringDuplicateCheck {
         }
         System.out.println(map);
         for (char c : map.keySet()) {
+
+            System.out.println("key" + c + "no of times value repeated" + map.get(c));
+
+
             if (map.get(c) > 1) {
 
                 System.out.println("Duplicate Element - " + c);

@@ -10,7 +10,8 @@ public class ArrayListDemo1 {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         Set<String> set = new HashSet<>();
-
+        set.add(null);
+        set.add(null);
         set.add("sreekar");
         set.add("reddy");
         set.add("suidfs");
