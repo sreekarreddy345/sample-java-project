@@ -8,8 +8,8 @@ public class RemoveExtraParentheses {
         for (int i = 0; i < 4; i++) {
             System.out.println("Enter String - ");
             String input = sc.next();
-            String validString = makeValidString(input);
-            System.out.println("validString - " + validString);
+            String validString = getValidString(input);
+            System.out.println("valid String - " + validString);
 
         }
     }
@@ -32,12 +32,41 @@ public class RemoveExtraParentheses {
         StringBuilder result = new StringBuilder();
         for (int i = sb.length() - 1; i >= 0; i--) {
             char c = sb.charAt(i);
-            if (c == '(' && open-- > 0) {
+            if ((c == '(') && (open--) > 0) {
                 continue;
             }
             result.append(c);
         }
         return result.reverse().toString();
     }
+
+    static String getValidString(String str) {
+        System.out.println("Given String - " + str);
+        StringBuilder sb = new StringBuilder();
+        char[] chars = str.toCharArray();
+        int count = 0;
+        for (char c : chars) {
+            if (c == '(') {
+                count++;
+            } else if (c == ')') {
+                if (count == 0) {
+                    continue;
+                }
+                count--;
+            }
+            sb.append(c);
+        }
+
+        StringBuilder s = new StringBuilder();
+        for (int i = sb.length() - 1; i >= 0; i--) {
+            char c = sb.charAt(i);
+            if (c == '(' && count-- > 0) {
+                continue;
+            }
+            s.append(c);
+        }
+        return s.reverse().toString();
+    }
+
 
 }

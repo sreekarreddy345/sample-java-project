@@ -12,7 +12,7 @@ public class ValidParentheses {
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter Text - ");
             String value = sc.next();
-            System.out.println("isValid - " + isValid(value));
+            System.out.println("isValid - " + isValidString(value));
         }
     }
 
@@ -32,6 +32,24 @@ public class ValidParentheses {
             }
 
         }
+        return stack.isEmpty();
+    }
+
+    static boolean isValidString(String str) {
+        char[] chars = str.toCharArray();
+        Stack<Character> stack = new Stack<>();
+        for (char a : chars) {
+            if (a == '(' || a == '{' || a == '[') {
+                stack.push(a);
+            } else if (a == ')' && !stack.isEmpty() && stack.peek() == '(') {
+                stack.pop();
+            } else if (a == '}' && !stack.isEmpty() && stack.peek() == '{') {
+                stack.pop();
+            } else if (a == ']' && !stack.isEmpty() && stack.peek() == '[') {
+                stack.pop();
+            }
+        }
+
         return stack.isEmpty();
     }
 

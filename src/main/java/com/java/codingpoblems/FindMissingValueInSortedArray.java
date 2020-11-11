@@ -1,14 +1,14 @@
 package com.java.codingpoblems;
 
-public class MissingValueInArray {
+public class FindMissingValueInSortedArray {
     public static void main(String[] args) {
         int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15};
 
 
-        System.out.println("last element - " + a[a.length - 1]);
+//        System.out.println("last element - " + a[a.length - 1]);
+
 //  if it is sorted we can provide the last element
         int limit = 15;
-
         int totalSumOfArray = sumOfArray(limit);
         int totalSumOfElements = sumOfElements(a);
         int missingElement = totalSumOfArray - totalSumOfElements;
@@ -21,12 +21,9 @@ public class MissingValueInArray {
             sum = sum + elements[i];
         }
         return sum;
-
     }
 
-    private static int sumOfArray(int limit) {
-        int sum = 0;
-        return sum = limit * (limit + 1) / 2;
-
+    private static int sumOfArray(int n) {
+        return n * (n + 1) / 2;
     }
 }

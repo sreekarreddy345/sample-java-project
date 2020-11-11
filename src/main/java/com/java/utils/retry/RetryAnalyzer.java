@@ -1,4 +1,4 @@
-package com.java.utils;
+package com.java.utils.retry;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

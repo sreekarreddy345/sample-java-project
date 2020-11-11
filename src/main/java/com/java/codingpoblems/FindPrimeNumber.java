@@ -6,17 +6,17 @@ public class FindPrimeNumber {
     public static void main(String[] args) {
 
         for (int i = 0; i < 100; i++) {
-            boolean isComposite = false;
+            boolean isPrime = true;
             for (int j = 2; j < i; j++) {
                 if (i % j == 0) {
-                    isComposite = true;
+                    isPrime = false;
                     break;
                 }
             }
-            if (isComposite) {
-                System.out.println(i + " - is a composite number");
-            } else {
+            if (isPrime) {
                 System.out.println(i + " - is a prime number");
+            } else {
+                System.out.println(i + " - is not a prime number");
             }
         }
         secondLargestInArray();

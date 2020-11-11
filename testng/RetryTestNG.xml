@@ -2,11 +2,11 @@
 
 <suite name="RetryFailedTests" verbose="1">
     <listeners>
-        <listener class-name="com.java.utils.AnnotationTransformer"/>
+        <listener class-name="com.java.utils.retry.AnnotationTransformer"/>
     </listeners>
     <test name="RetryMulitple">
         <classes>
-            <class name="com.java.utils.RetryTest2"/>
+            <class name="com.java.utils.retry.RetryTest2"/>
         </classes>
     </test>
 </suite>

@@ -26,10 +26,13 @@ public class RestAssuredExample1 {
     public void getMethod() {
 
         IntStream.range(1, 1000);
-        String s = RestAssured.given().when()
+        String s = RestAssured
+                .given()
+                .when()
                 .header("Authorization", "Bearer hjvsfhjbfjkfbfbskfhsfbjskb")   // to send unique authorization details
                 .get("http://dummy.restapiexample.com/api/v1/employees")
-                .getBody().asString();
+                .getBody()
+                .asString();
 
         Gson gson = new Gson();
         Map<String, Object> stringObjectMap = gson.<Map<String, Object>>fromJson(s, Map.class);

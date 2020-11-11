@@ -10,7 +10,6 @@ public class CheckInsertionOrder {
         char[] mychar = mystring.toCharArray();
         int count = 1;
         for (int i = 0; i < (mychar.length) - 1; i++) {
-//            System.out.println("mychar[p1]: " + mychar[i] + " mychar[p2]: " + mychar[i + 1]);
             if (mychar[i] == mychar[i + 1]) {
                 count = count + 1;
                 System.out.println("count: " + count);
@@ -28,10 +27,34 @@ public class CheckInsertionOrder {
     }
 
     public static void main(String[] args) {
-        process("aabbbccccaaa");
+//        process("aabbbccccaaa");
+        getInsertionOrder("aabbbccccaaa");
 //        process("ggggyyynnnkkkkkk");
 //        process("aabbcccdef");
 //        process("abcdefghj");
+    }
+
+
+    static void getInsertionOrder(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        char[] chars = str.toCharArray();
+        int count = 1;
+        for (int i = 0; i < (chars.length) - 1; i++) {
+            if (chars[i] == chars[i + 1]) {
+
+                count = count + 1;
+            } else {
+                stringBuilder.append(chars[i]);
+                stringBuilder.append(count);
+                count = 1;
+            }
+            if (i == (chars.length) - 2) {
+                stringBuilder.append(chars[i + 1]);
+                stringBuilder.append(count);
+
+            }
+        }
+        System.out.println(stringBuilder.toString());
     }
 
 }

@@ -3,9 +3,13 @@ package com.java.codingpoblems;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class ValidJson {
     public static void main(String[] args) {
+
+        Queue<String> strings = new PriorityQueue<>();
         System.out.println("isValidJson - " + isValidJson("[\n" +
                 "  {\n" +
                 "    \"employee\": {\n" +

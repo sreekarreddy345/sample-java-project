@@ -1,4 +1,4 @@
-package com.java.utils;
+package com.java.utils.retry;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class RetryTest2 {
     @Test
     public void Test1() {
-        Assert.assertEquals(false, true);
+        Assert.assertEquals(true, true);
     }
 
     @Test

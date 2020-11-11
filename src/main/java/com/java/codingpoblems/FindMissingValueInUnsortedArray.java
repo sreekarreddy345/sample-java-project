@@ -1,6 +1,6 @@
 package com.java.codingpoblems;
 
-public class MissingValueInArrayBySorting {
+public class FindMissingValueInUnsortedArray {
     public static void main(String[] args) {
         int b[] = {5, 6, 4, 11, 13, 7, 14, 9, 2, 3, 1, 8, 10,};
         //first sort the elements if its not sorted already

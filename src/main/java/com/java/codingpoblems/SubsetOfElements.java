@@ -7,7 +7,7 @@ public class SubsetOfElements {
     public static void main(String[] args) {
         //get subset of two Strings
         String a = "abcd";
-        String b = "cdef";
+        String b = "cdefc";
         String c = a.concat(b);
         Set<Character> set = new TreeSet<>();
         /*Set<Character> set1 = new TreeSet<>();
@@ -23,7 +23,7 @@ public class SubsetOfElements {
             if (!set.contains(ch)) {
                 set.add(ch);
             } else {
-                System.out.println(ch);
+                System.out.print(ch);// will give subset of values
             }
         }
     }

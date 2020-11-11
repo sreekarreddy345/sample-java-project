@@ -9,20 +9,20 @@ public class PrimeNumber {
         Scanner scanner = new Scanner(System.in);
         int input;
         for (int i = 0; i < 10; i++) {
-            System.out.print("Enter input value - ");
+            System.out.print("Enter input value to check - ");
             input = scanner.nextInt();
-            boolean isComposite = false;
+            boolean isPrime = true;
 
             for (int j = 2; j < input; j++) {
                 if (input % j == 0) {
-                    isComposite = true;
+                    isPrime = false;
                     break;
                 }
             }
-            if (isComposite) {
-                System.out.println(input + " - is not a composite number");
-            } else {
+            if (isPrime) {
                 System.out.println(input + " - is a prime number");
+            } else {
+                System.out.println(input + " - is not a prime number");
             }
         }
     }
