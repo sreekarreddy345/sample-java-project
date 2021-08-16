@@ -1,0 +1,8 @@
+If you want to skip running and compiling tests:
+	- mvn -Dmaven.test.skip=true install
+
+If you want to compile but not run tests:
+	- mvn install -DskipTests
+
+To remove files which are already committed or pushed to repo
+	- git rm -r --cached .idea

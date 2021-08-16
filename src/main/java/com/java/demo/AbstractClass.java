@@ -18,12 +18,13 @@ class Circle extends Shape {
 
     @Override
     void show() {
-
+        System.out.println("Implementing Show in Circle");
     }
 }
 class Rectangle extends Shape {
 
     void draw() {
+        super.draw();
         System.out.println("Drawing Rectangle");
     }
 
@@ -35,8 +36,7 @@ class Rectangle extends Shape {
 
 public class AbstractClass {
     public static void main(String[] args) {
-        Shape shape;
-        shape = new Circle();
+        Shape shape = new Circle();
         shape.draw();
 
 

@@ -25,11 +25,7 @@ public class GetExample {
         Map<String, Object> map = Lib.convertStringToMap(content);
 
         String s = new Gson().toJson(map);
-
-
         List<?> data1 = (List<?>) map.get("data");
-
-
         for (int i = 0; i < data1.size(); i++) {
             String query = "$.data[" + i + "].employee_name";
             String value = JsonPath.read(map, query);

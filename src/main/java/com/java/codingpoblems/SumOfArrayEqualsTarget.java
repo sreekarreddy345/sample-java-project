@@ -1,19 +1,15 @@
 package com.java.codingpoblems;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class SumOfArrayEqualsTarget {
     public static void main(String[] args) {
-//        int[] numbers = new int[]{1, 2, 6, 9, 4, 7, 5};
-//        int[] numbers = new int[]{7, 9, 3, 5, 3, 4, 3};
-        int[] numbers = new int[]{3, 6, 7, 2, 9, 1, 5};
-//        int [] n = {1,2,2};
-//        int a[] = {2,4,5,6,5};
 
+        int[] numbers = new int[]{3, 6, 7, 2, 9, 1, 5};
         int target = 8;
-        int[] result = getTwoSum(numbers, target);
-        System.out.println("index of - " + result[1] + " , " + result[0]);
+        printpairs(numbers, target);
     }
 
     //todo need write logic for the below code
@@ -27,6 +23,19 @@ public class SumOfArrayEqualsTarget {
             visitedNumber.put(numbers[i], i);
         }
         return new int[]{-1, -1};
+    }
+
+    static void printpairs(int arr[], int sum) {
+        HashSet<Integer> s = new HashSet<Integer>();
+        for (int i = 0; i < arr.length; ++i) {
+            int temp = sum - arr[i];
+            if (s.contains(temp)) { // checking for condition
+                System.out.println("Pair with given sum  (" + arr[i] + ", " + temp + ")");
+            }
+            s.add(arr[i]);
+        }
+
+
     }
 
 }

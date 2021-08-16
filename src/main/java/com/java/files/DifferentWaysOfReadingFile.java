@@ -4,7 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -12,6 +16,7 @@ public class DifferentWaysOfReadingFile {
     public static void main(String[] args) throws IOException {
 
         String path = "C:\\Users\\sreek\\Desktop\\sample.txt";
+        readFileUsingStream(path);
 
         // using buffered reader
         File file = new File(path);
@@ -42,6 +47,14 @@ public class DifferentWaysOfReadingFile {
         BufferedReader bufferedReader1 = new BufferedReader(new FileReader(f));
         firstLineMessage = bufferedReader1.readLine();// to read first line
         System.out.println("firstLineMessage - " + firstLineMessage);
+    }
+
+    public static String readFileUsingStream(String path1) throws IOException {
+        Path path = Paths.get(path1);
+        Stream<String> streamOfStrings = Files.lines(path);
+        Stream<String> streamWithCharset = Files.lines(path, Charset.forName("UTF-8"));
+        System.out.println(streamWithCharset);
+        return null;
     }
 }
 

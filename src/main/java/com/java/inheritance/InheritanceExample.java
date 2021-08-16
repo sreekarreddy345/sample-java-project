@@ -25,12 +25,9 @@ class ParentClass {
 class ChildClass extends ParentClass {
     int a = 20;
 
+    @Override
     public void sample() {
-        System.out.println("value of a from parent class - " + super.a); // a is from parent class since we mentioned super
-        System.out.println("value of a from child class - " + this.a);
-        // help() can be called either directly - help() or using super - super.help or by creating object
-        help();
-        super.help();
+
     }
 }
 

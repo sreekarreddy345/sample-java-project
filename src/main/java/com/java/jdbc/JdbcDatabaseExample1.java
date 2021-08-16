@@ -3,20 +3,19 @@ package com.java.jdbc;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class JdbcDatabaseExample1 {
     @Test
-    public static void jdbcConnection() {
+    public static void jdbcConnection() throws SQLException {
+        Connection connection = null;
+        Statement stmt = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/sreekar", "Sreekar", "Sree@1234");
 //
-            Statement stmt = connection.createStatement();
+            stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("select * from student;");
 //            todo preparedStatement and Callable statement
 //            PreparedStatement preparedStatement = connection.prepareStatement("");
@@ -42,9 +41,13 @@ public class JdbcDatabaseExample1 {
                 Assert.assertEquals(rs.getString(5), "835 Paisley Court", "Address not same");
                 Assert.assertEquals(rs.getString(5), "835 Paisley Court", "Address not same");
             }
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
+            rs.close();
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println("error  - " + e);
+        } finally {
+            stmt.close();
+            if (connection != null)
+                connection.close();
         }
     }
 }

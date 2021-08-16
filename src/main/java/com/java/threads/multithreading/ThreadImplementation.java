@@ -17,10 +17,10 @@ public class ThreadImplementation {
     public static void main(String[] args) {
         for (int i = 0; i < 6; i++) {
             MultiThread multiThread = new MultiThread();
-            multiThread.setName("this is multi thread");
+            multiThread.setName("this is created using MultiThread Class");
             multiThread.start();// one way to run thread by using class object.start();
             Thread thread = new Thread(new MultiThread());
-            thread.setName("this is threadddd");
+            thread.setName("this is created using Thread Class");
             thread.start();//second way to run thread by using thread object.start();
         }
     }

@@ -2,11 +2,11 @@ package com.java.demo;
 
 @FunctionalInterface
 interface Functional {
+    static void getWork() {
+
+    }
+
     public void doWork();
-
-    public boolean equals(Object obj);
-
-    public String toString();
 
     default void test() {
 
@@ -16,6 +16,10 @@ interface Functional {
 
 public class FunctionalInterfaceExample implements Functional {
     public static void main(String[] args) {
+
+        Functional.getWork();
+        FunctionalInterfaceExample f = new FunctionalInterfaceExample();
+        f.test();// calling default methods in interface
 
     }
 

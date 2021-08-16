@@ -8,19 +8,27 @@ public class OverloadingExample {
 
     public static void main(String[] args) {
         System.out.println(getRandomString());
+        System.out.println(getRandomString(1));
+        dateExample();
     }
 
 
     public static String getRandomString() {
         UUID random = UUID.randomUUID();
-        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-        System.out.println(timeStamp);
         return "THB".concat(random.toString().replaceAll("-", ""));
     }
 
-    public static String getRandomString(int count) {
+    public static int getRandomString(int count) {
+        return count;
+    }
 
-        return null;
+    public static void dateExample() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        Date date = new Date();
+        String format = sdf.format(date);
+        System.out.println("formatted date = " + format);
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        System.out.println("formatted date = " + timeStamp);
     }
 
 }

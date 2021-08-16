@@ -3,12 +3,15 @@ package com.java.codingpoblems;
 import com.google.gson.Gson;
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 public class RestAssuredExample1 {
 
@@ -25,14 +28,31 @@ public class RestAssuredExample1 {
     @Test(enabled = false)
     public void getMethod() {
 
-        IntStream.range(1, 1000);
-        String s = RestAssured
+
+        Response response = RestAssured
                 .given()
-                .when()
                 .header("Authorization", "Bearer hjvsfhjbfjkfbfbskfhsfbjskb")   // to send unique authorization details
                 .get("http://dummy.restapiexample.com/api/v1/employees")
-                .getBody()
-                .asString();
+                .then()
+                .contentType(ContentType.JSON)
+                .extract()
+                .response();
+
+        List<Object> jsonResponseList = response.jsonPath().getList("$");
+
+        ValidatableResponse validatableResponse = RestAssured
+                .given()
+                .header("Authorization", "Bearer hjvsfhjbfjkfbfbskfhsfbjskb")   // to send unique authorization details
+                .get("http://dummy.restapiexample.com/api/v1/employees")
+                .then()
+                .assertThat()
+                .statusCode(200);
+
+
+        String s = "dummy value";
+
+//                .getBody()
+//                .asString();
 
         Gson gson = new Gson();
         Map<String, Object> stringObjectMap = gson.<Map<String, Object>>fromJson(s, Map.class);
@@ -117,6 +137,11 @@ public class RestAssuredExample1 {
         } else {
             System.out.println("Not Found");
         }
+    }
+
+    //    @AfterMethod
+    public void afterMethod(ITestResult result) {
+        result.getStatus();// gives us the test status whether its pass or fail.
     }
 
     @Test
